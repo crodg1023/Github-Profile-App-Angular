@@ -1,0 +1,8 @@
+<main class="w-full px-8 sm:px-16 lg:px-24 xl:px-32">
+    <app-user-info [user]="user"></app-user-info>
+    <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 mt-[34px]">
+        @for (repo of repos; track repo.id) {
+            <app-repository-card [repoInfo]="repo"></app-repository-card>
+        }
+    </div>
+</main>

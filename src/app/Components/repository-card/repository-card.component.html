@@ -1,0 +1,21 @@
+<article class="w-full rounded-xl bg-gradient-to-r from-[#111729] to-[#1D1B48] p-5 cursor-pointer" (click)="handleRepoClick()">
+    <h1 class="text-xl text-[#CDD5E0]">{{ repoInfo.name }}</h1>
+    <p class="text-[#4A5567] mt-3">{{ repoInfo.description }}</p>
+    <div class="flex flex-col items-start gap-3 mt-5 sm:flex-row sm:items-center">
+        @if (repoInfo.license) {
+            <div class="flex gap-1">
+                <img src="../../../assets/Chield_alt.svg" alt="">
+                <p class="text-[#4A5567]">{{ repoInfo.license.spdx_id }}</p>
+            </div>
+        }
+        <div class="flex gap-1">
+            <img src="../../../assets/Nesting.svg" alt="">
+            <p class="text-[#4A5567]">{{ repoInfo.forks }}</p>
+        </div>
+        <div class="flex gap-1">
+            <img src="../../../assets/Star.svg" alt="">
+            <p class="text-[#4A5567]">{{ repoInfo.stargazers_count }}</p>
+        </div>
+        <span class="ml-3 text-[#4A5567] text-xs">updated {{ getLastUpdated() }} days ago</span>
+    </div>
+</article>
